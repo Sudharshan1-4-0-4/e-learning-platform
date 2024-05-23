@@ -1,0 +1,51 @@
+.course-card{
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    color: whitesmoke;
+    background-image: radial-gradient(rgb(74, 8, 77), rgb(229, 172, 212));
+    width: 500px;
+    height: auto;
+    box-shadow: 0ch;
+}
+.course-card:hover{
+    width: 510px;
+    height: 490px;
+    cursor: pointer;
+}
+.heading {
+    color: antiquewhite;
+}
+.image {
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+}
+.content{
+    margin-top: 10px;
+}
+button{
+    background-color: rgb(128, 128, 227);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: none;
+    border-radius: 20px;
+    color: white;
+    margin-top: 8px;
+}
+button:hover{
+    background-color: blue;
+    cursor: pointer;
+    color: white;
+}
+a {
+    text-decoration: none;
+    /* Optional: inherit color from parent */
+  }
+  
+  a:hover {
+     /* Optional: add underline on hover */
+    color: white; /* Optional: change color on hover */
+  }

@@ -1,0 +1,35 @@
+.heading:hover{
+    
+    cursor: pointer;
+    color: aqua;
+   
+}
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(rgb(10, 10, 10), rgb(106, 6, 6));
+    height: 100vh;
+    background-size: cover;
+}
+a {
+    text-decoration: none;
+    /* Optional: inherit color from parent */
+  }
+  
+  a:hover {
+     /* Optional: add underline on hover */
+    color: blue; /* Optional: change color on hover */
+  }
+  
+  /* Specific styles for navbar links */
+  nav a {
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color: red; /* Example: change color on hover */
+  }
+  

@@ -1,0 +1,80 @@
+###
+
+POST http://localhost:4001/register/
+Content-Type: application/json
+
+{   
+    "name":"kaira",
+    "phone":"7225847527",
+    "email": "kaira@gmail.com",
+    "password": "kaira"
+    
+}
+
+
+###
+
+POST http://localhost:4001/login/
+Content-Type: application/json
+
+{
+    "name":"charan",
+    "password": "charan"
+}
+
+# ###
+# GET https://user-credientials.onrender.com/users/
+
+###
+
+GET http://localhost:4001/user/
+
+###
+
+GET http://localhost:4001/courses/
+
+###
+
+GET http://localhost:4001/courses/6/
+
+###
+
+GET http://localhost:4001/orders/
+
+
+# ###
+# POST https://user-credientials.onrender.com/login/
+# Content-Type: application/json
+
+# {
+#     "name":"rahul",
+#     "password": "rahu1l"
+# }
+
+# ###
+# POST https://user-credientials.onrender.com/register/
+# Content-Type: application/json
+
+# {   
+#     "name":"rahu",
+#     "phone":"7225847527",
+#     "email": "rahul@456",
+#     "password": "rahu"
+    
+# }
+
+###
+DELETE http://localhost:4001/user/16/
+
+###
+
+POST http://localhost:4001/registrations/
+Content-Type: application/json
+
+{   
+    "course_id":10,
+    "course_name":"html",
+    "user_name": "kaira",
+    "amount": "400"
+    
+}
