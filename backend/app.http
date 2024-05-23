@@ -64,7 +64,7 @@ GET http://localhost:4001/orders/
 # }
 
 ###
-DELETE http://localhost:4001/user/16/
+DELETE http://localhost:4001/user/4/
 
 ###
 
