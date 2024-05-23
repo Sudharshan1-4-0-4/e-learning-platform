@@ -11,6 +11,7 @@
 .course-card:hover{
     width: 510px;
     height: 490px;
+    background-image: radial-gradient(rgb(66, 2, 69), rgb(111, 8, 80));
     cursor: pointer;
 }
 .heading {

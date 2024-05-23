@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
  import "./index.css";
  import Thanks from "../Thanks";
 
+
 const Registration = ({details}) => {
   const [user_name, setName] = useState("");
   const course_id = details.course_id;
@@ -45,6 +46,7 @@ const Registration = ({details}) => {
       console.log("navigated");
       setIsPopupVisible(true);
       setName("");
+     
       
     } else {
       navigate("/signIn");

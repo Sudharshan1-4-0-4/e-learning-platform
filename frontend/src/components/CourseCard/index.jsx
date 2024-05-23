@@ -10,9 +10,9 @@ function CourseCard({ course }) {
       <div className='content'>
       <h2>{course.course_name}</h2>
       <p>{course.course_brief_description}</p>
-      <button>
-        <Link to={`/courses/${course.course_id}`}>View Details</Link>
-      </button>
+      
+        <Link to={`/courses/${course.course_id}`}><button>View Details</button></Link>
+      
       </div>
       
     </div>

@@ -1,7 +1,7 @@
 // src/pages/Courses.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import Footer from '../Footer';
 import CourseCard from '../CourseCard';
 import './index.css';
 function Courses() {
@@ -22,6 +22,7 @@ function Courses() {
           <CourseCard key={course.course_id} course={course} />
         ))}
       </div>
+      <Footer/>
     </div>
   );
 }

@@ -6,6 +6,8 @@ function Home() {
   return (
     <div className='main-container'>
       <Link to ={"/courses/"} ><h1 className='heading'>(❁´◡`❁)..Welcome to the E-Learning Platform..(❁´◡`❁)</h1></Link>
+    
+   
     </div>
   );
 }
