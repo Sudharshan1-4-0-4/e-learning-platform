@@ -9,9 +9,9 @@ const CartListView = () => {
 
   return (
     <ul className="cart-list">
-      {cartList.map(eachCartItem => (
+      {cartList.length > 0 ? cartList.map(eachCartItem => (
         <CartItem key={eachCartItem.course_id} name = {name} cartItemDetails={eachCartItem} />
-      ))}
+      )) : <p>..No added Items Into a Cart..</p>}
     </ul>
   );
 };

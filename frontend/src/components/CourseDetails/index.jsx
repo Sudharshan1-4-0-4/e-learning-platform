@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import CartContext from '../../context/CartContext';
 import Registration from '../Registration';
 import './index.css';
 
@@ -11,7 +11,7 @@ function CourseDetails() {
   const [isVisible, setIsVisible] = useState(false);
   const { id } = useParams(); // Extract course ID from URL parameters
   
-
+  const { addCartItem } = useContext(CartContext); // Correct useContext
   useEffect(() => {
     axios.get(`http://localhost:4001/courses/${id}/`)
       .then(response => {
@@ -45,7 +45,12 @@ function CourseDetails() {
     setDetails(course);
   };
 
-  
+  const addCart = () => {
+    console.log("adding...")
+    console.log(course);
+    addCartItem(course); 
+   
+  }
 
   const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
@@ -63,7 +68,7 @@ function CourseDetails() {
         <p className='heading'>{course.course_description}</p>
 
         <button onClick={registrationForm}>Register</button>
-       
+        <button onClick={addCart}>Add to Cart</button>
       </div>
 
       <div className="youtube-container">

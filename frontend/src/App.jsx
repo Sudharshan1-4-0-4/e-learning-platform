@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import LoginForm from './components/LoginForm';
 import SignIn from './components/SignIn';
 import Navbar from './components/Navbar';
+import Registrations from './components/Registrations';
 import './App.css';
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/courses/:id" element={<CourseDetails />} />
             <Route path="/login" element={<LoginForm />} />
+            <Route path="/registrations" element={<Registrations />} />
           </Routes>
         </CartContext.Provider>
       </BrowserRouter>

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import CartContext from '../../context/CartContext';
+import CartContext from "../../context/CartContext";
 import Thanks from "../Thanks";
 import "./index.css";
 
@@ -10,7 +10,8 @@ const Registration = ({ details }) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const course_name = details.course_name;
   const amount = details.amount;
-  const { addCartItem , nameAdd} = useContext(CartContext); // Correct useContext
+  const {nameAdd} = useContext(CartContext);
+
   const navigate = useNavigate();
 
   const onChangeUsername = (event) => {
@@ -35,7 +36,6 @@ const Registration = ({ details }) => {
       if (response.ok) {
         setIsPopupVisible(true);
         setName("");
-        addCartItem(details); // Call addCartItem here to add to cart
         nameAdd(user_name);
       } else {
         navigate("/signIn");

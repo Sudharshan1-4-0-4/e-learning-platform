@@ -169,4 +169,20 @@ app.post("/registrations", async (request, response) => {
   }
 });
 
+
+
+app.post("/registerd", async (request, response) => {
+  const { name } = request.body;
+  const selectUserQuery = `SELECT * FROM registrations WHERE user_name = '${name}'`;
+  const dbUser = await db.all(selectUserQuery);
+  if (dbUser === undefined) {
+    response.status(400);
+    response.send("Invalid User");
+  } else {
+      response.send(dbUser)
+    }
+  }
+);
+
+
 module.exports = app;

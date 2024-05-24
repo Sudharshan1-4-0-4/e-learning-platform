@@ -5,9 +5,9 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import CartContext from '../../context/CartContext';
 import './index.css';
 
-const CartItem = ({ cartItemDetails, name }) => {
+const CartItem = ({ cartItemDetails }) => {
   const { course_id, course_name, amount } = cartItemDetails;
-  const user_name = name;
+  
   const {  deleteCartItem } = useContext(CartContext);
 
 //   const handleIncrement = () => {
@@ -33,7 +33,7 @@ const CartItem = ({ cartItemDetails, name }) => {
         <div className="cart-product-title-brand-container">
           <p className="cart-product-title">{course_name}</p>
           <p className="cart-product-brand">Course_Id: {course_id}</p>
-          <p className="cart-product-brand">User_Name: {user_name}</p>
+          
           <p className="cart-product-brand">Amount   : {amount}</p>
         </div>
         

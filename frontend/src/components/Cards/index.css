@@ -1,0 +1,20 @@
+.main_container{
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    color: whitesmoke;
+    background-image: radial-gradient(rgb(74, 8, 77), rgb(229, 172, 212));
+    width: 500px;
+    height: auto;
+    box-shadow: 0ch;
+}
+.main_container:hover{
+    
+    background-image: radial-gradient(rgb(66, 2, 69), rgb(111, 8, 80));
+    cursor: pointer;
+}
+
+.dex{
+    margin-top: 10px;
+}
+

@@ -41,6 +41,14 @@ GET http://localhost:4001/courses/6/
 
 GET http://localhost:4001/orders/
 
+###
+POST http://localhost:4001/registerd/
+Content-Type: application/json
+
+{
+    "name":"charan"
+    
+}
 
 # ###
 # POST https://user-credientials.onrender.com/login/
