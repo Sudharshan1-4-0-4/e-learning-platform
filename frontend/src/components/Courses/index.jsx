@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Footer from '../Footer';
 import CourseCard from '../CourseCard';
-import './index.css';
+import './course.css';
+
 function Courses() {
   const [courses, setCourses] = useState([]);
 
@@ -14,7 +15,7 @@ function Courses() {
   }, []);
 
   return (
-    <div className='course-container'>
+    <div className='course-container11'>
       <h1>Courses</h1>
       <marquee>🏃‍♂️🏃‍♂️...E-learing-platform..,🏃‍♂️🏃‍♂️</marquee>
       <div className='cards'>

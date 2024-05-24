@@ -6,10 +6,10 @@
 }
 .main-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(rgb(10, 10, 10), rgb(106, 6, 6));
+    background-image: radial-gradient(rgb(33, 3, 3), rgb(94, 3, 3));
     height: 100vh;
     background-size: cover;
 }
@@ -32,4 +32,69 @@ a {
   nav a:hover {
     color: red; /* Example: change color on hover */
   }
-  
+  .para{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 70%;
+    margin: 20px;
+    padding: 20px;
+  }
+p {
+  color: rgb(153, 149, 149);
+}
+  .features{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .feature1{
+    width: 600px;
+    background-image: radial-gradient(rgb(41, 12, 46), rgb(104, 4, 14));
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    height: 190px;
+  }
+  .feature2{
+    width: 600px;
+    background-image: radial-gradient(rgb(41, 12, 46), rgb(104, 4, 14));
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    height: 190px;
+  }
+  .feature3{
+    width: 600px;
+    background-image: radial-gradient(rgb(41, 12, 46), rgb(104, 4, 14));
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    height: 190px;
+  }
+  .head{
+    color: rgb(170, 169, 236);
+    text-decoration: double;
+    font-style: italic;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .fea:hover{
+    background-image: radial-gradient(rgb(38, 3, 44), rgb(51, 1, 6));
+    width: 620px;
+    height: 200px;
+    
+  }
+
+  .p1:hover{
+    color: white;
+  }

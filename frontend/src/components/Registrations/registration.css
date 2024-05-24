@@ -6,7 +6,7 @@
     color: azure;
     background-image: radial-gradient(rgb(33, 3, 3), rgb(94, 3, 3));
     align-items: center;
-    height: auto;
+    height: 100vh;
     background-size: cover;
     padding: 10px;
 }

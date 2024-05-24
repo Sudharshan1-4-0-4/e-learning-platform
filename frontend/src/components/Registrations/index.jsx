@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+
 import CartContext from '../../context/CartContext';
 import Cards from '../Cards';
 
-import './index.css';
+import './registration.css';
 
 function Registrations() {
   const [orders, setOrders] = useState([]);

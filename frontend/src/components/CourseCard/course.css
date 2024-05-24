@@ -50,3 +50,19 @@ a {
      /* Optional: add underline on hover */
     color: white; /* Optional: change color on hover */
   }
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+  
+  /* Style applied when the button is clicked */
+  .button:active {
+    transform: translateY(3px); /* Moves the button 3px down */
+  }

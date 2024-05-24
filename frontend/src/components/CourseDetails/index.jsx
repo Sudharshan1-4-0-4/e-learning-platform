@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import CartContext from '../../context/CartContext';
 import Registration from '../Registration';
-import './index.css';
+import './courseDetails.css';
 
 function CourseDetails() {
   const [course, setCourse] = useState(null);
@@ -67,8 +67,8 @@ function CourseDetails() {
         <h1 className='heading'>{course.course_name}</h1>
         <p className='heading'>{course.course_description}</p>
 
-        <button onClick={registrationForm}>Register</button>
-        <button onClick={addCart}>Add to Cart</button>
+        <button onClick={registrationForm} className='button'>Register</button>&nbsp;&nbsp;
+        <button onClick={addCart} className='button'>Add to Cart</button>
       </div>
 
       <div className="youtube-container">

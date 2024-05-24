@@ -11,7 +11,7 @@ function CourseCard({ course }) {
       <h2>{course.course_name}</h2>
       <p>{course.course_brieśf_description}</p>
       
-        <Link to={`/courses/${course.course_id}`}><button>View Details</button></Link>
+        <Link to={`/courses/${course.course_id}`}><button className='button'>View Details</button></Link>
       
       </div>
       
