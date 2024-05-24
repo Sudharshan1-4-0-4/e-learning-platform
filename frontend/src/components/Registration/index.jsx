@@ -1,34 +1,24 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import CartContext from '../../context/CartContext';
+import Thanks from "../Thanks";
+import "./index.css";
 
-import { useNavigate, Link } from "react-router-dom";
-// import Cookies from 'js-cookie';
- import "./index.css";
- import Thanks from "../Thanks";
-
-
-const Registration = ({details}) => {
+const Registration = ({ details }) => {
   const [user_name, setName] = useState("");
   const course_id = details.course_id;
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const course_name = details.course_name;
   const amount = details.amount;
-  
-  const [showSubmitError, setShowSubmitError] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+  const { addCartItem , nameAdd} = useContext(CartContext); // Correct useContext
   const navigate = useNavigate();
 
   const onChangeUsername = (event) => {
     setName(event.target.value);
   };
 
- 
-
   const submitForm = async (event) => {
     event.preventDefault();
-
-
-    
 
     const userDetails = { course_id, course_name, user_name, amount };
     const url = "http://localhost:4001/registrations/";
@@ -40,17 +30,18 @@ const Registration = ({details}) => {
       body: JSON.stringify(userDetails),
     };
 
-    const response = await fetch(url, options);
-    // console.log(response);
-    if (response.ok) {
-      console.log("navigated");
-      setIsPopupVisible(true);
-      setName("");
-     
-      
-    } else {
-      navigate("/signIn");
-      
+    try {
+      const response = await fetch(url, options);
+      if (response.ok) {
+        setIsPopupVisible(true);
+        setName("");
+        addCartItem(details); // Call addCartItem here to add to cart
+        nameAdd(user_name);
+      } else {
+        navigate("/signIn");
+      }
+    } catch (error) {
+      console.error('Error:', error);
     }
   };
 
@@ -63,63 +54,59 @@ const Registration = ({details}) => {
       <form className="form1-container" onSubmit={submitForm}>
         <h1 className="heading">👉...E-Learning-Platform...👈</h1>
         <div className="input-container">
-          <label className="input-label" htmlFor="username">
+          <label className="input-label" htmlFor="course_id">
             COURSE_ID
           </label>
           <input
             type="text"
-            id="username"
+            id="course_id"
             value={course_id}
             className="username-input-field"
-           
-            
+            readOnly
           />
         </div>
         <div className="input-container">
-          <label className="input-label" htmlFor="phone">
+          <label className="input-label" htmlFor="course_name">
             COURSE_NAME
           </label>
           <input
             type="text"
-            id="phone"
+            id="course_name"
             value={course_name}
             className="username-input-field"
-           
+            readOnly
           />
         </div>
         <div className="input-container">
-          <label className="input-label" htmlFor="email">
+          <label className="input-label" htmlFor="user_name">
             USER_NAME
           </label>
           <input
             type="text"
-            id="email"
+            id="user_name"
             value={user_name}
             className="username-input-field"
             onChange={onChangeUsername}
-           
           />
         </div>
         <div className="input-container">
-          <label className="input-label" htmlFor="password">
+          <label className="input-label" htmlFor="amount">
             AMOUNT
           </label>
           <input
             type="text"
-            id="password"
+            id="amount"
             value={amount}
             className="password-input-field"
-           
+            readOnly
           />
         </div>
         <button type="submit" className="login-button">
-          submit
+          Submit
         </button>
 
         {isPopupVisible && <Thanks onClose={closePopup} />}
-        
       </form>
-     
     </div>
   );
 };

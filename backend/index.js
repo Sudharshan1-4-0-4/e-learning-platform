@@ -131,11 +131,11 @@ app.get("/courses/:courseId/", async (request, response) => {
 
 
 //API-5 delete method
-app.delete("/user/:userId/", async (request, response) => {
-  const { userId } = request.params;
-  const delete1query = `DELETE FROM user_details WHERE id = ${userId};`;
+app.delete("/orders/:course_id/", async (request, response) => {
+  const { course_id } = request.params;
+  const delete1query = `DELETE FROM registrations WHERE course_id = ${course_id};`;
   const res4 = await db.run(delete1query);
-  response.send("user Deleted");
+  response.send("orders Deleted");
 });
 
 

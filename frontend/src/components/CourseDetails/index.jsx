@@ -1,26 +1,24 @@
-// src/pages/CourseDetail.js
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import './index.css';
+import axios from 'axios';
+
 import Registration from '../Registration';
+import './index.css';
 
-
-
-function CourseDetails({ match }) {
+function CourseDetails() {
   const [course, setCourse] = useState(null);
-  const [details, setDetails] = useState();
+  const [details, setDetails] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
-  const { id } = useParams();
+  const { id } = useParams(); // Extract course ID from URL parameters
+  
 
   useEffect(() => {
     axios.get(`http://localhost:4001/courses/${id}/`)
       .then(response => {
         setCourse(response.data);
-        console.log("api called");
+        console.log("API called");
         console.log(response.data.course_video);
-      }
-    )
+      })
       .catch(error => console.error('Error fetching course:', error));
   }, [id]);
 
@@ -36,32 +34,22 @@ function CourseDetails({ match }) {
 
   const videoId = extractVideoId(course.course_video);
 
-  // Function to extract video ID from URL
-  
-
   if (!videoId) {
     return <div>Error: Invalid YouTube video URL</div>;
   }
 
-  const registrationForm = () =>{
-    // setPlaced(true);
-  //  console.log(course.amount);
-  //  console.log(course.course_id);
-  //  console.log(course.course_name);
-  console.log("clicked..");
+  const registrationForm = () => {
+    console.log("clicked..");
+    console.log(course);
     setIsVisible(true);
     setDetails(course);
+  };
 
-    
-    // return <File product_id= {product_id}/>
-    
-    
-};
+  
 
   const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
   const handleParentClick = (event) => {
-    console.log("handle..")
     console.log(event.target.className);
     if (event.target.className === 'orders-container') {
       setIsVisible(false);
@@ -74,24 +62,22 @@ function CourseDetails({ match }) {
         <h1 className='heading'>{course.course_name}</h1>
         <p className='heading'>{course.course_description}</p>
 
-        <button onClick = {registrationForm}>Register</button>
+        <button onClick={registrationForm}>Register</button>
+       
+      </div>
 
-      </div>
-      
-      
       <div className="youtube-container">
-              
-          <iframe
-            width="560"
-            height="315"
-            src={embedUrl}
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="YouTube video player"
-          ></iframe>
+        <iframe
+          width="560"
+          height="315"
+          src={embedUrl}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="YouTube video player"
+        ></iframe>
       </div>
-      {isVisible && <Registration details = {details}/>}
+      {isVisible && <Registration details={details} />}
     </div>
   );
 }
