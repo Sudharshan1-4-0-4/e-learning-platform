@@ -1,4 +1,4 @@
-GROCERY_MANAGEMENT_SYSTEM
+E_LEARNING_PLATFORM
 
 OVERVIEW
   This project is a web application built with React.js and Vite, aiming to design user friendly web application. It allows users to access different courses and register liked courses.
